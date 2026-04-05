@@ -91,7 +91,7 @@ Allows users to track and export their interactions for later reference.
 	•	No domain-specific fine-tuning has been applied
 	•	Performance may vary depending on document structure
 	•	No quantitative evaluation metrics (e.g., Exact Match, F1) implemented
-
+    •   No inference optimization (e.g., quantization, ONNX) applied
 
 ## How to Run Locally
 
@@ -106,7 +106,13 @@ streamlit run app.py
 	•	Hugging Face Transformers
 	•	PyTorch (CPU)
 	•	Streamlit
+    •   Model: deepset/roberta-base-squad2 (SQuAD 2.0 fine-tuned)
 
+## Deployment
+
+The application is deployed on Streamlit Cloud and can be accessed via the live demo link above.
+
+The deployment uses a CPU-only PyTorch configuration to ensure compatibility with cloud resource constraints.
 
 ## Notes
 
