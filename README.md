@@ -1,9 +1,9 @@
-Document Q&A — Extractive Question Answering with Transformers
+# Document Q&A — Extractive Question Answering with Transformers
 
-🔗 Live Demo: https://your-streamlit-link.streamlit.app
+🔗 Live Demo: https://ai-document-transformers-muanpi.streamlit.app/
 
 
-Overview
+## Overview
 
 This project implements an extractive question answering (QA) system using transformer-based models.
 It allows users to paste a document and ask natural language questions, returning precise answers directly from the text along with a confidence score.
@@ -11,7 +11,7 @@ It allows users to paste a document and ask natural language questions, returnin
 The goal of this system is to enable efficient information retrieval from long or complex documents without requiring full manual reading.
 
 
-Motivation
+## Motivation
 
 This project was developed to solve a real-world problem.
 When working with official documents such as government notices, legal forms, or medical records, extracting a specific piece of information can be time-consuming.
@@ -19,7 +19,7 @@ When working with official documents such as government notices, legal forms, or
 This system provides a faster and more reliable way to locate exact answers within a document.
 
 
-How It Works
+## How It Works
 
 The application is built using Python, Hugging Face Transformers, and Streamlit.
 	•	Model: deepset/roberta-base-squad2
@@ -36,7 +36,7 @@ The model processes both the document (context) and the question together, predi
 	•	End position of the answer
 
 
-Why SQuAD 2.0
+## Why SQuAD 2.0
 
 SQuAD 2.0 includes both answerable and unanswerable questions.
 
@@ -47,7 +47,7 @@ This allows the model to:
 This improves reliability compared to models trained only on answerable datasets.
 
 
-Features
+## Features
 	•	Extractive question answering from user-provided text
 	•	Confidence score with visual indicators (high, medium, low)
 	•	Highlighted answer span within the original document
@@ -56,7 +56,7 @@ Features
 	•	Word count and input validation
 
 
-Project Structure
+## Project Structure
 	•	app.py — Streamlit interface and user interaction
 	•	qa_engine.py — Model loading and inference logic
 	•	utils.py — Helper functions (text cleaning, word count, highlighting)
@@ -64,7 +64,7 @@ Project Structure
 	•	runtime.txt — Python version configuration
 
 
-Design Decisions
+## Design Decisions
 
 Extractive vs Generative QA
 Extractive QA was chosen to ensure that answers come directly from the source document, improving trust and verifiability.
@@ -79,33 +79,35 @@ Session History
 Allows users to track and export their interactions for later reference.
 
 
-Key Observations
+## Key Observations
 	•	Extractive QA provides verifiable answers directly from source text
 	•	Confidence scores help identify uncertain predictions
 	•	Model performance depends on input length and question clarity
 	•	Initial model loading is slower, but subsequent queries are faster due to caching
 
 
-Limitations
+## Limitations
 	•	Input length is constrained by transformer token limits
 	•	No domain-specific fine-tuning has been applied
 	•	Performance may vary depending on document structure
 	•	No quantitative evaluation metrics (e.g., Exact Match, F1) implemented
 
 
-How to Run Locally
+## How to Run Locally
+
+```bash
 git clone https://github.com/muanpi969-jpg/document-qa-transformers
 cd document-qa-transformers
 pip install -r requirements.txt
 streamlit run app.py
 
-Tech Stack
+## Tech Stack
 	•	Python 3.10
 	•	Hugging Face Transformers
 	•	PyTorch (CPU)
 	•	Streamlit
 
 
-Notes
+## Notes
 
 This project demonstrates the application of transformer-based NLP models in a real-world setting, focusing on reliability, interpretability, and practical usability rather than text generation.
